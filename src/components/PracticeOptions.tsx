@@ -26,7 +26,7 @@ export interface PracticeOptionsCollapseButtonProps {
 function PracticeOptionsCollapseButton({ opened, onClick }: PracticeOptionsCollapseButtonProps) {
   return (
     <Button variant="subtle" size="sm" onClick={onClick}>
-      {opened ? "Hide" : "Show"} Options
+      {opened ? "Skrýt" : "Zobrazit"} možnosti
     </Button>
   );
 }

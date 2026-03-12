@@ -681,14 +681,32 @@ const katakanaWords = [
   "ロボット",
 ];
 
-function toRomaji(word: string): string {
-  return wanakana.toRomaji(word);
+function removeDiacritics(text: string) {
+  return text.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
+function toCzechRomaji(word: string): string[] | string {
+  let romaji = wanakana.toRomaji(word);
+
+  // Replacements from English romaji to Czech transcription
+  romaji = romaji.replace(/sh/g, "š");
+  romaji = romaji.replace(/ch/g, "č");
+  romaji = romaji.replace(/ts/g, "c");
+  romaji = romaji.replace(/j/g, "dž");
+  romaji = romaji.replace(/y/g, "j");
+
+  const noDiacritics = removeDiacritics(romaji);
+  if (romaji !== noDiacritics) {
+    return [romaji, noDiacritics];
+  }
+
+  return romaji;
 }
 
 function toKanaObject(word: string) {
   return {
     kana: word,
-    romaji: toRomaji(word),
+    romaji: toCzechRomaji(word),
   };
 }
 

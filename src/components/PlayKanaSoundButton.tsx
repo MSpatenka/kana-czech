@@ -33,7 +33,7 @@ function PlayKanaSoundButton({ romaji }: PlayKanaSoundButtonProps) {
         if (audio === null) setAudio(new Audio(kanaAudioSource.djtguide(effectiveRomaji)));
       }}
     >
-      Play Sound
+      Přehrát zvuk
     </Button>
   );
 }

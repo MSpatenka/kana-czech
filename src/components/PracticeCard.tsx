@@ -20,7 +20,7 @@ export interface BackToMenuButtonProps {
 
 function BackToMenuButton({ onClick }: BackToMenuButtonProps) {
   return (
-    <Tooltip {...tooltipProps} label="Go back to menu">
+    <Tooltip {...tooltipProps} label="Zpět do menu">
       <ActionIcon variant="light" onClick={onClick}>
         <IconChevronLeft size={32} />
       </ActionIcon>
@@ -54,7 +54,7 @@ function PracticeCard() {
   }
 
   return (
-    <TitledCard title="Practice" titleOrder={3} titleActionElement={page !== "menu" ? backToMenuButton : undefined}>
+    <TitledCard title="Procvičování" titleOrder={3} titleActionElement={page !== "menu" ? backToMenuButton : undefined}>
       {pageElement}
     </TitledCard>
   );

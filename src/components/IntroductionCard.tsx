@@ -13,29 +13,24 @@ function IntroductionCard() {
   return (
     <TitledCard title="Kana" collapsible>
       <Text>
-        Kana is the very first thing a Japanese learner needs to learn. It refers to {bold("hiragana")} and{" "}
-        {bold("katakana")}, the two scripts of the Japanese language. You can read the relevant section and resources on
-        the brilliant <Anchor href="http://learnjapanese.moe/guide/#kana">learnjapanese.moe</Anchor> guide to learn
-        more.
+        Kana je úplně první věc, kterou se člověk studující japonštinu musí naučit. Zahrnuje {bold("hiraganu")} a{" "}
+        {bold("katakanu")}, dvě abecedy japonského jazyka. Můžete si také přečíst materiály na stránkách <Anchor href="https://www.japonstina.osu.cz/index.php">Ostravské univerzity</Anchor> a dozvědět se více.
       </Text>
 
       <Title order={4} mt="sm">
-        About
+        O aplikaci
       </Title>
       <Text>
-        This is a page aiming to be an easy, effective, quick way to learn kana without suffering through mnemonics and
-        such. All you need to do is to spend some time with the extremely simple exercise below, in which you will try
-        to answer with the correct{" "}
-        <Tooltip {...tooltipProps} label="Romanized spelling used to transliterate Japanese">
+        Tato stránka má za cíl být snadným, efektivním a rychlým způsobem, jak se naučit kanu bez utrpení s mnemotechnickými pomůckami a podobně. Vše, co musíte udělat, je strávit nějaký čas s extrémně jednoduchým cvičením níže, ve kterém se budete snažit odpovědět správným{" "}
+        <Tooltip {...tooltipProps} label="Přepis japonských znaků do latinky pomocí české výslovnosti">
           <Text span italic c="blue.2" sx={{ textDecoration: "underline dotted" }}>
-            romaji
+            českým přepisem
           </Text>
         </Tooltip>{" "}
-        for the shown kana. This way of learning is also referred to as brute forcing, because you try again and again
-        until it sticks, and in the case of kana, it sticks rather easily with this method.
+        pro zobrazenou kanu. Tomuto způsobu učení se také říká drilování, protože to zkoušíte znovu a znovu, dokud si to nezapamatujete. V případě kany si to s touto metodou zapamatujete docela snadno.
       </Text>
       <Text mt="xs" fz="xs">
-        Have an issue/request/etc.? Open an issue on <Anchor href="https://github.com/vedxyz/kana">GitHub</Anchor>.
+        Tento projekt je založen na <Anchor href="https://github.com/vedxyz/kana">vedxyz/kana</Anchor>, publikovaném pod <Anchor href="https://github.com/vedxyz/kana/blob/main/LICENSE">MIT licencí</Anchor>, a byl lokalizován do češtiny. Tato lokalizace je dostupná pod stejnou licencí na <Anchor href="https://github.com/MSpatenka/kana-czech">GitHubu</Anchor>.
       </Text>
     </TitledCard>
   );

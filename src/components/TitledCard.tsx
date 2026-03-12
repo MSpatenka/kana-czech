@@ -38,7 +38,7 @@ function TitledCard({ title, titleOrder = 1, children, collapsible = false, titl
         <Group>
           {titleActionElement}
           {collapsible && (
-            <Tooltip {...tooltipProps} label="Show/Hide">
+            <Tooltip {...tooltipProps} label="Zobrazit/Skrýt">
               <ActionIcon variant="light" onClick={toggle}>
                 <IconLayoutNavbarCollapse size={32} opacity={opacity} />
               </ActionIcon>

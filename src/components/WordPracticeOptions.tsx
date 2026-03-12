@@ -12,7 +12,7 @@ export interface WordPracticeOptionsProps {
 function WordPracticeOptions({ options, onChange }: WordPracticeOptionsProps) {
   const buildCheckbox = (kanaType: KanaNames) => (
     <Checkbox
-      label={`Include ${words[kanaType].length} ${kanaType} words`}
+      label={`Zahrnout ${words[kanaType].length} slov (${kanaType})`}
       checked={options[kanaType]}
       onChange={(e) => onChange({ ...options, [kanaType]: e.currentTarget.checked })}
       mb="xs"

@@ -20,31 +20,27 @@ function BruteForceMenu() {
   return (
     <Container px={0}>
       <Text>
-        In this mode you will go through learning stages that introduce you to a new set of kana each time. The answer
-        for newly encountered kana will be shown automatically, pay extra attention to the shape of these kana. After
-        each learning stage, there is a review stage of every kana you have learnt so far. Each stage has a certain
-        requirement to clear, as you will see.
+        V tomto režimu projdete fázemi učení, které vás pokaždé seznámí s novou sadou kany. Odpověď pro nově nalezenou kanu se zobrazí automaticky, věnujte zvláštní pozornost tvaru těchto znaků kana. Po každé fázi učení následuje fáze opakování všech znaků kana, které jste se dosud naučili. Každá fáze má určitý požadavek na splnění, jak sami uvidíte.
       </Text>
       <Title order={4} mt="sm">
-        Tips
+        Tipy
       </Title>
       <List pr={16}>
         <List.Item>
-          Do not feel pressured to move onto the next stage immediately when prompted, gauge yourself.
+          Neciťte se pod tlakem, abyste okamžitě přešli do další fáze, když k tomu budete vyzváni, odhadněte své síly.
         </List.Item>
-        <List.Item>You can continue from any stage you want within the options menu.</List.Item>
-        <List.Item>You should expect to need a total of ~1600 correct answers to clear all stages.</List.Item>
+        <List.Item>Můžete pokračovat z libovolné fáze, kterou chcete, v nabídce možností.</List.Item>
+        <List.Item>Měli byste počítat s tím, že ke splnění všech fází budete potřebovat celkem ~1600 správných odpovědí.</List.Item>
         <List.Item>
-          Learning kana here will not necessarily make you able to <Text span>produce</Text> them. The only guarantee is
-          that you will be able to recognize kana on sight, which is enough (or at least a good start) for most people.
+          Učení kany zde vás nutně nenaučí ji <Text span>psát</Text>. Jedinou zárukou je, že budete schopni rozeznat kanu od pohledu, což je pro většinu lidí dostatečné (nebo alespoň dobrý začátek).
         </List.Item>
       </List>
       <Text mt="sm">
-        You should learn{" "}
+        Měli byste se naučit{" "}
         <Text span italic>
-          hiragana
+          hiraganu
         </Text>{" "}
-        first.
+        jako první.
       </Text>
 
       <Group mt="sm">

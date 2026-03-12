@@ -173,11 +173,11 @@ function KanaBoard({ kanaType, combinations = false, onChange, options }: KanaBo
     <Container px={0}>
       <Group position="apart" mb="xs" mt="md">
         <Text weight="bold" size="1rem">
-          {kanaType[0].toUpperCase() + kanaType.slice(1)} {combinations && "Combinations"}
+          {kanaType[0].toUpperCase() + kanaType.slice(1)} {combinations && "Kombinace"}
         </Text>
         <Group>
           <Checkbox
-            label="All"
+            label="Vše"
             indeterminate={allHasChecked && allHasUnchecked}
             checked={!allHasUnchecked}
             onChange={() => handleCheckboxGroupToggle("all")}
@@ -185,7 +185,7 @@ function KanaBoard({ kanaType, combinations = false, onChange, options }: KanaBo
           {!combinations && (
             <>
               <Checkbox
-                label="Regular"
+                label="Základní"
                 indeterminate={checks.regular.hasChecked && checks.regular.hasUnchecked}
                 checked={!checks.regular.hasUnchecked}
                 onChange={() => handleCheckboxGroupToggle("regular")}

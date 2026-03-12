@@ -53,7 +53,7 @@ function PracticeKanaInput({
   const checkWordInput: ChangeEventHandler<HTMLInputElement> = (event) => {
     const value = event.currentTarget.value.toLowerCase();
 
-    if (value === romaji) {
+    if (value === romaji || (Array.isArray(romaji) && romaji.some((romaji) => romaji === value))) {
       resetState();
       onAnswer(true);
     } else {
@@ -78,7 +78,7 @@ function PracticeKanaInput({
       <Group position="center">
         <TextInput
           id={kanaInputId}
-          w={wordMode ? "14rem" : "6rem"}
+          w={wordMode ? "14rem" : "8rem"}
           styles={() => ({
             input: {
               textAlign: "center",
@@ -87,8 +87,8 @@ function PracticeKanaInput({
               textAlign: "center",
             },
           })}
-          maxLength={Math.max(5, ...(Array.isArray(romaji) ? romaji.map((r) => r.length) : [romaji.length]))}
-          placeholder="romaji"
+          maxLength={Math.max(12, ...(Array.isArray(romaji) ? romaji.map((r) => r.length) : [romaji.length]))}
+          placeholder="český přepis"
           value={kanaInputValue}
           error={gaveIncorrectAnswer ? (showCorrectAnswer ? `${kana} = ${stringifiedRomaji}` : true) : false}
           onChange={wordMode ? checkWordInput : checkKanaInput}

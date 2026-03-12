@@ -193,37 +193,36 @@ function BruteForcePractice({ kanaType }: BruteForcePracticeProps) {
 
       {bruteForce.isFinalStage(stage.stage) && !stage.learning && stageSatisfied ? (
         <Container mt="3rem" fz="sm" px={0}>
-          <Text>Congratulations! You have learnt {kanaType}! </Text>
+          <Text>Gratulujeme! Naučili jste se {kanaType}! </Text>
           <Text>
-            If you&apos;re still missing {kanaType === "hiragana" ? "katakana" : "hiragana"}, you can learn that now.
-            You can also make use of Free Mode and Word Mode.
+            Pokud vám stále chybí {kanaType === "hiragana" ? "katakana" : "hiragana"}, můžete se ji naučit teď. Můžete také využít Volný režim a Režim slov.
           </Text>
         </Container>
       ) : (
         <Group position="apart" mt="3rem" align="end">
           <div>
             <Text c="dimmed" fz="sm">
-              {stage.learning ? "Learning" : "Reviewing up to stage"} {stage.stage.name}
+              {stage.learning ? "Učení" : "Opakování do fáze"} {stage.stage.name}
             </Text>
             <Text c="dimmed" fz="xs">
               {!stageSatisfied
                 ? statCounts.remainingLimitsCount > 0
-                  ? `${statCounts.remainingLimitsCount} distinct kana left to eliminate (${statCounts.remainingLimitsTotal} total)`
-                  : `${
+                  ? `${statCounts.remainingLimitsCount} různých znaků kana k vyřazení (celkem ${statCounts.remainingLimitsTotal})`
+                  : `k dokončení fáze chybí ${
                       effectiveStatThresholds.rollingWindowCorrectLimit - statCounts.rollingCorrectCount
-                    } more correct answers needed to clear the stage`
-                : "Stage cleared! Proceed to the next stage if you feel confident"}
+                    } správných odpovědí`
+                : "Fáze dokončena! Pokud se cítíte jistě, přejděte do další fáze"}
             </Text>
           </div>
           {stageSatisfied ? (
             <Button variant="light" onClick={() => handleStageChange(computeNextStageState())}>
-              Next Stage ({stage.learning ? "Review" : nextStage.name})
+              Další fáze ({stage.learning ? "Opakování" : nextStage.name})
             </Button>
           ) : (
             <Text c="dimmed" fz="xs">
               {nextStage || stage.learning
-                ? `Next Stage (${stage.learning ? "Review" : nextStage.name})`
-                : "Final Stage"}
+                ? `Další fáze (${stage.learning ? "Opakování" : nextStage.name})`
+                : "Závěrečná fáze"}
             </Text>
           )}
         </Group>
@@ -236,7 +235,7 @@ function BruteForcePractice({ kanaType }: BruteForcePracticeProps) {
           <KanaAnswerTooltipHint />
         </Group>
         <Group>
-          <Tooltip {...tooltipProps} label="Correct / Total">
+          <Tooltip {...tooltipProps} label="Správně / Celkem">
             <Text c="dimmed" fz="sm">{`${stats.correctCount} / ${stats.totalCount}`}</Text>
           </Tooltip>
         </Group>

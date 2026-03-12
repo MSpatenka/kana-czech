@@ -24,10 +24,10 @@ function BruteForcePracticeOptions({
     <>
       <Container px={0} py="md">
         <Title order={6} mb="sm">
-          General
+          Obecné
         </Title>
         <Checkbox
-          label="Show correct answer when a wrong answer is given"
+          label="Zobrazit správnou odpověď při zadání špatné odpovědi"
           checked={miscOptions.showCorrectAnswer}
           onChange={() => {
             onMiscChange({
@@ -39,7 +39,7 @@ function BruteForcePracticeOptions({
       </Container>
 
       <Title order={6} mb="sm">
-        Stages
+        Fáze
       </Title>
       {bruteForce.stages.map((stage) => (
         <BruteForcePracticeStageOption

@@ -71,7 +71,7 @@ function FreePractice() {
           <KanaAnswerTooltipHint />
         </Group>
         <Group>
-          <Tooltip {...tooltipProps} label="Correct / Total">
+          <Tooltip {...tooltipProps} label="Správně / Celkem">
             <Text c="dimmed" fz="sm">{`${stats.correctCount} / ${stats.totalCount}`}</Text>
           </Tooltip>
         </Group>

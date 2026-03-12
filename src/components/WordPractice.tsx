@@ -1,7 +1,7 @@
 import { Button, Container, Group, Text, Tooltip } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
 import React, { useRef, useState } from "react";
-import { KanaNames, shuffledStream } from "../utilities/kana";
+import { KanaNames, shuffledStream, stringifyRomaji } from "../utilities/kana";
 import { tooltipProps } from "../utilities/tooltip";
 import { words } from "../utilities/words";
 import KanaAnswerTooltipHint from "./KanaAnswerTooltipHint";
@@ -63,7 +63,7 @@ function WordPractice() {
 
       {previousKana && (
         <Text c="dimmed" fz="xs" mt="2.5rem">
-          previous: {previousKana.kana} = {previousKana.romaji}
+          předchozí: {previousKana.kana} = {stringifyRomaji(previousKana.romaji)}
         </Text>
       )}
 
@@ -76,13 +76,13 @@ function WordPractice() {
             href={`https://jisho.org/search/${currentKana.kana}`}
             target="_blank"
           >
-            Search Jisho
+            Hledat na Jisho
           </Button>
           <PracticeOptions.CollapseButton opened={openedOptions} onClick={toggleOptions} />
           <KanaAnswerTooltipHint />
         </Group>
         <Group>
-          <Tooltip {...tooltipProps} label="Correct / Total">
+          <Tooltip {...tooltipProps} label="Správně / Celkem">
             <Text c="dimmed" fz="sm">{`${stats.correctCount} / ${stats.totalCount}`}</Text>
           </Tooltip>
         </Group>

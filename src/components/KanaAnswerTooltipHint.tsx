@@ -5,7 +5,7 @@ import { browserIsMobile } from "../utilities/mobile";
 function KanaAnswerTooltipHint() {
   return (
     <Text c="dimmed" fz="xs" opacity={0.35}>
-      {browserIsMobile ? "Touch" : "Hover over"} kana to reveal answer
+      {browserIsMobile ? "Klepnutím na" : "Přejetím myší přes"} kanu odhalíte odpověď
     </Text>
   );
 }
